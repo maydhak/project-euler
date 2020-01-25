@@ -16,13 +16,14 @@ def truncatable_prime(number, primes):
         end -= 1
     return truncatable
 
+
 def solution37():
     primes_found = {2}
     n = 3
     truncatable_primes_found = set()
     while len(truncatable_primes_found) < 14:  # 3, 5, 7 are also included using this method but there are only 11 relevant truncatable primes
         prime = True
-        for p in primes_found: # check the new number against all previously found primes
+        for p in primes_found:  # check the new number against all previously found primes
             if p < n/2:  # if the prime divisor > half the number, the quotient will be < 2 and it can no longer be prime; 2 is the smallest prime
                 if n % p == 0:
                     prime = False
@@ -35,4 +36,5 @@ def solution37():
         n += 2  # prime numbers must be odd, so we will increment by 2
     return sum(truncatable_primes_found)-15  # 15 = sum of 3 + 5 + 7
 
-print(solution37())
+
+print(solution37())  # Answer: 748317
