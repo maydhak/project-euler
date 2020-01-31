@@ -10,7 +10,7 @@ def solution5(mynum):
     from functools import reduce
 
     def lcm(num, nums_found):
-        current_lcm = reduce(lambda x,y: x*y, nums_found)
+        current_lcm = reduce(lambda x, y: x*y, nums_found)
         if current_lcm % num != 0:  # No need to multiply further if the current LCM already divides the number
             current_lcm *= num
             nums_found.append(num)
@@ -24,7 +24,7 @@ def solution5(mynum):
             if highest_factor != 1:
                 nums_found.remove(highest_factor)
 
-        return reduce(lambda x,y: x*y, nums_found), nums_found
+        return reduce(lambda x, y: x*y, nums_found), nums_found
         # nums_found might have changed so the reduce function has to be called again on it to return the LCM
 
     result_nums = [1]

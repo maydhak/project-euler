@@ -23,11 +23,13 @@ c = 1000-a-b, so a+b > 1000-a-b. Then
 2a+2b > 1000, so a+b > 500 and c < 500.
 """
 
+
 def solution9():
     for c in reversed(range(1, 500)):  # c < 500
         for a in range(1, 1000-c):  # the max value of a is 500 since b > 0
             if a**2 + (1000-c-a)**2 == c**2:  # b = (1000-c-a) since a + b + c = 1000
                 return a*(1000-c-a)*c, a, (1000-c-a), c
                 # first return value is the product, followed by the values of a, b, c
+
 
 print(solution9())

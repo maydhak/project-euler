@@ -12,7 +12,11 @@ Find the difference between the sum of the squares of the first one hundred natu
 and the square of the sum.
 """
 
+
 def solution6():
     sum_squares = sum(n**2 for n in range(1, 101))
     squares_sum = (sum(n for n in range(1, 101)))**2
-    print(squares_sum - sum_squares)
+    return squares_sum - sum_squares
+
+
+print(solution6())
